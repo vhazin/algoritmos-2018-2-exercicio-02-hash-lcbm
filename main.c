@@ -1,25 +1,24 @@
 #include <stdio.h>
 
 int main(void){
-    unsigned long int t, line = 0;
-    scanf("%lu", &t);
-    unsigned long int output[t], counter;
-    while (t > line){
-        unsigned long int a, b, x, n, c, d, m;
-        scanf("%lu %lu %lu %lu %lu %lu %lu", &a, &b, &x, &n, &c, &d, &m);
-        for (unsigned int index = 0; index <= n; index++){
-            unsigned long int hx = a * (x + index) + b % m;
-            if (c <= hx <= d && hx <= m - 1){
+    unsigned int t;
+    scanf("%u", &t);
+    unsigned long long output[t];
+    while (t--){
+        unsigned long long a, b, x, n, c, d, m, counter = 0;
+        scanf("%llu %llu %llu %llu %llu %llu %llu", &a, &b, &x, &n, &c, &d, &m);
+        for (unsigned long long index = 0; index <= n; index++){
+            unsigned long long hx = a * (x + index) + b % m;
+            if ((c <= hx <= d) && (hx <= (m - 1))){
                 counter++;
             };
         };
-        output[line] = counter;
+        output[t] = counter;
         counter = 0;
-        line++;
+        // printf("%llu\n", counter);
     };
-    for (line = 0; line < t; line++){
-        printf("%lu", output[line]);
-        printf("\n");
+    for (t = 0; t < sizeof(output)/sizeof(unsigned long long); t++){
+        printf("%llu\n", output[t]);
     };
     return 0;
-}
+};
