@@ -22,13 +22,7 @@ int main(void){
 
             if (n > a && n > d)
             {
-                // 7198784/ ((4045261 - 3752118) + ((7437984 - 2325167)));
                 counter = (n / ((m - d) + (d - c))) * (d - c) + (n / ((m - d) + (d - c)));
-                //(floor(n / ((m - d) + (d - c))) * (d - c))
-                // floor((d - m) / (d - c)) + 2);
-                // if (counter > n){
-                //     counter = counter/2;
-                // };
                 printf("1 %llu\n", counter);
                 counter = 0;
                 continue;
